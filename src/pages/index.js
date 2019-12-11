@@ -6,7 +6,6 @@ import Scroll from '../components/Scroll';
 import config from '../../config';
 import Footer from '../components/Footer';
 import SocialLinks from '../components/SocialLinks';
-import Subscribe from '../components/Subscribe';
 import Header from '../components/Header';
 
 import ipad from '../assets/images/ipad.png';
@@ -25,33 +24,14 @@ const IndexPage = () => (
           <h2 className="text-white-50 mx-auto mt-2 mb-5">
             {config.subHeading}
           </h2>
-          <Scroll type="id" element="about">
-            <a href="#about" className="btn btn-primary">
-              About
+          <Scroll type="id" element="projects">
+            <a href="#projects" className="btn btn-primary">
+              Projects
             </a>
           </Scroll>
         </div>
       </div>
     </header>
-
-    <section id="about" className="about-section text-center">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <h2 className="text-white mb-4">Built with Bootstrap 4</h2>
-            <p className="text-white-50">
-              Grayscale is a free Bootstrap theme created by Start Bootstrap. It
-              can be yours right now, simply download the starter on
-              <a href="https://github.com/anubhavsrivastava/gatsby-starter-grayscale">
-                the github repo
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-        <img src={ipad} className="img-fluid" alt="" />
-      </div>
-    </section>
 
     <section id="projects" className="projects-section bg-light">
       <div className="container">
@@ -70,6 +50,7 @@ const IndexPage = () => (
             </div>
           </div>
         </div>
+
 
         <div className="row justify-content-center no-gutters mb-5 mb-lg-0">
           <div className="col-lg-6">
@@ -114,7 +95,25 @@ const IndexPage = () => (
       </div>
     </section>
 
-    <Subscribe />
+
+    <section id="about" className="about-section text-center">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <h2 className="text-white mb-4">Built with Bootstrap 4</h2>
+            <p className="text-white-50">
+              Grayscale is a free Bootstrap theme created by Start Bootstrap. It
+              can be yours right now, simply download the starter on
+              <a href="https://github.com/anubhavsrivastava/gatsby-starter-grayscale">
+                the github repo
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+        <img src={ipad} className="img-fluid" alt="" />
+      </div>
+    </section>
 
     <SocialLinks />
     <Footer />
