@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Gatsby Starter Grayscale', // <title>
+  siteTitle: 'Home', // <title>
   manifestName: 'Grayscale',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',
@@ -8,8 +8,8 @@ module.exports = {
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/website-icon.png',
   pathPrefix: `/gatsby-starter-grayscale/`, // This path is subpath of your hosting https://domain/portfolio
-  heading: 'Anubhav Srivastava',
-  subHeading: 'Full time Web Developer. Part time Open source contributor  ',
+  heading: 'Shawn Tennity',
+  subHeading: 'Full stack software engineer and lifelong learner',
 
   // social
   socialLinks: [
@@ -28,13 +28,7 @@ module.exports = {
       name: 'Twitter',
       url: 'https://twitter.com/onlyanubhav',
     },
-    {
-      icon: 'fa-facebook-f',
-      name: 'Facebook',
-      url: 'https://facebook.com/theanubhav',
-    },
   ],
-  email: 'anubhav.srivastava00@gmail.com',
-  phone: '000-00000',
-  address: '305 Del Sol, Sunnyvale, CA',
+  email: 'shawntennity@gmail.com',
+  phone: '585-455-9166',
 };
