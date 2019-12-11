@@ -1,5 +1,5 @@
 .contact-section {
-  padding: 5rem 0 0;
+  padding: 3rem 0 0;
   .card {
     border: 0;
     border-bottom: 0.25rem solid $primary;
@@ -16,7 +16,7 @@
     }
   }
   .social {
-    margin-top: 5rem;
+    margin-top: 3rem;
     a {
       text-align: center;
       height: 3rem;
@@ -31,6 +31,9 @@
       &:active {
         color: $white;
       }
+    }
+    @media (max-width: 768px) {
+      margin-top: 1rem;
     }
   }
 }

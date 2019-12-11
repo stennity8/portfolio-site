@@ -32,7 +32,7 @@ export default function SocialLinks() {
           </div>
         </div>
 
-        <div className="social d-flex justify-content-center">
+        <div className="social d-flex justify-content-center" id="social-button">
           {config.socialLinks.map(social => {
             const { icon, url } = social;
             return (
