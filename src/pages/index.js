@@ -28,7 +28,7 @@ const IndexPage = () => {
     <Layout>
       <Header />
 
-      <header className="masthead">
+      <header className="masthead" id="page-top">
         <div className="container d-flex h-100 align-items-center">
           <div className="mx-auto text-center">
             <animated.h1 style={animation} className="mx-auto my-0 text-uppercase">{config.heading}</animated.h1>
@@ -43,36 +43,6 @@ const IndexPage = () => {
           </div>
         </div>
       </header>
-      {/* <header className="masthead">
-        <div className="container d-flex h-100 align-items-center">
-
-          <VisibilitySensor partialVisibility>
-            {({ isVisible }) => (
-              <Spring
-                delay={500}
-                to={{
-                  // opacity: isVisible ? 1 : 0,
-                  marginTop: isVisible ? -10 : 0
-                }}
-              >
-                {props =>
-                  <div style={{ ...props }} className="mx-auto text-center">
-                    <h1 className="mx-auto my-0 text-uppercase">{config.heading}</h1>
-                    <h2 className="text-white-75 mx-auto mt-2 mb-5">
-                      {config.subHeading}
-                    </h2>
-                    <Scroll type="id" element="projects">
-                      <a href="#projects" className="btn btn-primary">
-                        Projects
-                        </a>
-                    </Scroll>
-                  </div>
-                }
-              </Spring>
-            )}
-          </VisibilitySensor>
-        </div>
-      </header> */}
 
       <section id="projects" className="projects-section bg-light">
         <div className="container">
@@ -90,12 +60,11 @@ const IndexPage = () => {
                 return (<Spring
                   delay={300}
                   to={{
-                    // opacity: isVisible ? 1 : 0,
                     transform: isVisible ? "translateX(0)" : `translateX(${translateXOffset}px)`
                   }}
                 >
                   {props =>
-                    <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props }}>
+                    <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props, overflow: "hidden" }}>
                       <div className="col-xl-8 col-lg-7" >
                         <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
                       </div>
@@ -127,67 +96,107 @@ const IndexPage = () => {
             </VisibilitySensor>
           </div>
 
+          <div>
+            <VisibilitySensor partialVisibility>
+              {({ isVisible }) => {
+                let screenWidth = window.innerWidth - 25
+                let offset = 100
+                if (document.getElementById('project1')) {
+                  offset = document.getElementById('project1').offsetWidth
+                }
+                let translateXOffset = ((screenWidth - offset) / 2) + offset
+                let translateXOffsetNeg = -(((screenWidth - offset) / 2) + offset)
 
-          <div className="row justify-content-center no-gutters mb-5 mb-lg-0">
-            <div className="col-lg-6 fill">
-              <img className="img-fluid" src={demoImage1} alt="" />
-            </div>
-            <div className="col-lg-6">
-              <div className="bg-black text-center h-100 project">
-                <div className="d-flex h-100">
-                  <div className="project-text w-100 my-auto text-center text-lg-left">
-                    <h4 className="text-white">Misty</h4>
-                    <p className="mb-0 text-white">
-                      An example of where you can put an image of a project, or
-                      anything else, along with a description.
-                  </p>
-                    <hr className="d-none d-lg-block mb-0 ml-0" />
-                    <div className="d-flex justify-content-center mt-3">
-                      <a key={"url5"} href={"url"} className="btn btn-primary mx-2 p-2">
-                        <i className="fab fa-github"></i>
-                        GitHub
-                    </a>
-                      <a key={"url6"} href={"url"} className="btn btn-primary mx-2 p-2">
-                        <i className="fa fa-cog"></i>
-                        Demo
-                    </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                return (
+                  <>
+                    <Spring
+                      delay={300}
+                      to={{
+                        transform: isVisible ? "translateX(0)" : `translateX(${translateXOffsetNeg}px)`
+                      }}
+                    >
+                      {props =>
+                        <div className="row justify-content-center no-gutters mb-4 mb-lg-0" style={{ ...props, overflow: "hidden" }}>
+                          <div className="col-lg-6 fill">
+                            <img className="img-fluid" src={demoImage1} alt="" />
+                          </div>
+                          <div className="col-lg-6">
+                            <div className="bg-black text-center h-100 project">
+                              <div className="d-flex h-100">
+                                <div className="project-text w-100 my-auto text-center text-lg-left">
+                                  <h4 className="text-white">Misty</h4>
+                                  <p className="mb-0 text-white">
+                                    An example of where you can put an image of a project, or
+                                    anything else, along with a description.
+                          </p>
+                                  <hr className="d-none d-lg-block mb-0 ml-0" />
+                                  <div className="d-flex justify-content-center mt-3">
+                                    <a key={"url5"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                      <i className="fab fa-github"></i>
+                                      GitHub
+                            </a>
+                                    <a key={"url6"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                      <i className="fa fa-cog"></i>
+                                      Demo
+                            </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      }
+                    </Spring>
+
+                    <Spring
+                      delay={300}
+                      to={{
+                        transform: isVisible ? "translateX(0)" : `translateX(${translateXOffset}px)`
+                      }}
+                    >
+                      {props =>
+                        <div className="row justify-content-center no-gutters" style={{ ...props, overflow: "hidden" }}>
+                          <div className="col-lg-6 fill">
+                            <img className="img-fluid" src={demoImage2} alt="" />
+                          </div>
+                          <div className="col-lg-6 order-lg-first">
+                            <div className="bg-black text-center h-100 project">
+                              <div className="d-flex h-100">
+                                <div className="project-text w-100 my-auto text-center text-lg-right">
+                                  <h4 className="text-white">Mountains</h4>
+                                  <p className="mb-0 text-white-50">
+                                    Another example of a project with its respective
+                                    description. These sections work well responsively as well,
+                                    try this theme on a small screen!
+                                  </p>
+                                  <hr className="d-none d-lg-block mb-0 mr-0" />
+                                  <div className="d-flex justify-content-center mt-3">
+                                    <a key={"url7"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                      <i className="fab fa-github"></i>
+                                      GitHub
+                                    </a>
+                                    <a key={"url8"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                      <i className="fa fa-cog"></i>
+                                      Demo
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      }
+                    </Spring>
+                  </>
+                )
+              }}
+            </VisibilitySensor>
           </div>
 
-          <div className="row justify-content-center no-gutters">
-            <div className="col-lg-6 fill">
-              <img className="img-fluid" src={demoImage2} alt="" />
-            </div>
-            <div className="col-lg-6 order-lg-first">
-              <div className="bg-black text-center h-100 project">
-                <div className="d-flex h-100">
-                  <div className="project-text w-100 my-auto text-center text-lg-right">
-                    <h4 className="text-white">Mountains</h4>
-                    <p className="mb-0 text-white-50">
-                      Another example of a project with its respective
-                      description. These sections work well responsively as well,
-                      try this theme on a small screen!
-                  </p>
-                    <hr className="d-none d-lg-block mb-0 mr-0" />
-                    <div className="d-flex justify-content-center mt-3">
-                      <a key={"url7"} href={"url"} className="btn btn-primary mx-2 p-2">
-                        <i className="fab fa-github"></i>
-                        GitHub
-                    </a>
-                      <a key={"url8"} href={"url"} className="btn btn-primary mx-2 p-2">
-                        <i className="fa fa-cog"></i>
-                        Demo
-                    </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+
+
 
           <div className="row align-items-center no-gutters mt-4 mt-lg-5">
             <div className="col-xl-8 col-lg-7">
