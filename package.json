@@ -22,6 +22,8 @@
     "react-helmet": "^5.2.1",
     "react-images": "^0.5.19",
     "react-scrollspy": "^3.4.0",
+    "react-spring": "^8.0.27",
+    "react-visibility-sensor": "^5.1.1",
     "smoothscroll-polyfill": "^0.4.4"
   },
   "scripts": {
