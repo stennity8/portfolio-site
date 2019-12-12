@@ -193,53 +193,91 @@ const IndexPage = () => {
             </VisibilitySensor>
           </div>
 
+          <div>
+            <VisibilitySensor partialVisibility>
+              {({ isVisible }) => {
+                let screenWidth = window.innerWidth - 25
+                let offset = 100
+                if (document.getElementById('project1')) {
+                  offset = document.getElementById('project1').offsetWidth
+                }
+                let translateXOffset = ((screenWidth - offset) / 2) + offset
+                let translateXOffsetNeg = -(((screenWidth - offset) / 2) + offset)
 
-
-
-
-
-          <div className="row align-items-center no-gutters mt-4 mt-lg-5">
-            <div className="col-xl-8 col-lg-7">
-              <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
-            </div>
-            <div className="col-xl-4 col-lg-5">
-              <div className="featured-text text-center text-lg-left">
-                <h4>Shoreline</h4>
-                <p className="text-black mb-0">
-                  Grayscale is open source and MIT licensed. This means you can
-                  use it for any project - even commercial projects! Download it,
-                  customize it, and publish your website!
-              </p>
-                <div className="social d-flex justify-content-center mt-3">
-                  <a key={"url9"} href={"url"} className="btn btn-primary mx-2 p-2">
-                    <i className="fab fa-github"></i>
-                    GitHub
-                </a>
-                  <a key={"url10"} href={"url"} className="btn btn-primary mx-2 p-2">
-                    <i className="fa fa-cog"></i>
-                    Demo
-                </a>
-                </div>
-              </div>
-            </div>
+                return (
+                  <>
+                    <Spring
+                      delay={300}
+                      to={{
+                        transform: isVisible ? "translateX(0)" : `translateX(${translateXOffsetNeg}px)`
+                      }}
+                    >
+                      {props =>
+                        <div className="row align-items-center no-gutters mt-4 mt-lg-5" style={{ ...props }}>
+                          <div className="col-xl-8 col-lg-7">
+                            <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
+                          </div>
+                          <div className="col-xl-4 col-lg-5">
+                            <div className="featured-text text-center text-lg-left">
+                              <h4>Shoreline</h4>
+                              <p className="text-black mb-0">
+                                Grayscale is open source and MIT licensed. This means you can
+                                use it for any project - even commercial projects! Download it,
+                                customize it, and publish your website!
+                           </p>
+                              <div className="social d-flex justify-content-center mt-3">
+                                <a key={"url9"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                  <i className="fab fa-github"></i>
+                                  GitHub
+                             </a>
+                                <a key={"url10"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                  <i className="fa fa-cog"></i>
+                                  Demo
+                             </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      }
+                    </Spring>
+                  </>
+                )
+              }}
+            </VisibilitySensor>
           </div>
 
         </div>
       </section>
 
 
+
+
       <section id="about" className="about-section text-center">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <h2 className="text-white mb-2">About</h2>
-              <img src={myImage} className="img-fluid rounded-circle w-25 " alt="shawn-photo" />
-              <p className="text-white">
-                For as long as I can remember I have enjoyed solving problems.  This passion led me to software engineering and web development.  The path to this career was not straight, but the journey has been filled with jobs that have each added tools to my skillset.  If you are looking for someone with a combination of soft and technical skills, or you just want to chat, check out my portfolio and reach out.
-            </p>
-            </div>
-          </div>
-        </div>
+        <VisibilitySensor partialVisibility>
+          {({ isVisible }) => {
+            return (<Spring
+              delay={300}
+              to={{
+                opacity: isVisible ? 1 : 0
+              }}
+            >
+              {props =>
+                <div className="container" style={{ ...props, overflow: "hidden" }}>
+                  <div className="row">
+                    <div className="col-lg-8 mx-auto">
+                      <h2 className="text-white mb-2">About</h2>
+                      <img src={myImage} className="img-fluid rounded-circle w-25 " alt="shawn-photo" />
+                      <p className="text-white">
+                        For as long as I can remember I have enjoyed solving problems.  This passion led me to software engineering and web development.  The path to this career was not straight, but the journey has been filled with jobs that have each added tools to my skillset.  If you are looking for someone with a combination of soft and technical skills, or you just want to chat, check out my portfolio and reach out.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              }
+            </Spring>
+            )
+          }}
+        </VisibilitySensor>
       </section>
 
       <SocialLinks />
