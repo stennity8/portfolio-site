@@ -57,7 +57,7 @@ const IndexPage = () => {
           <div>
             <VisibilitySensor partialVisibility>
               {({ isVisible }) => {
-                let screenWidth = window.innerWidth
+                let screenWidth = window.innerWidth - 20
                 let offset = 100
                 if (document.getElementById('project1')) {
                   offset = document.getElementById('project1').offsetWidth
@@ -105,7 +105,7 @@ const IndexPage = () => {
           <div>
             <VisibilitySensor partialVisibility>
               {({ isVisible }) => {
-                let screenWidth = window.innerWidth - 25
+                let screenWidth = window.innerWidth - 20
                 let offset = 100
                 if (document.getElementById('project1')) {
                   offset = document.getElementById('project1').offsetWidth
@@ -202,7 +202,7 @@ const IndexPage = () => {
           <div>
             <VisibilitySensor partialVisibility>
               {({ isVisible }) => {
-                let screenWidth = window.innerWidth - 25
+                let screenWidth = window.innerWidth - 20
                 let offset = 100
                 if (document.getElementById('project1')) {
                   offset = document.getElementById('project1').offsetWidth
