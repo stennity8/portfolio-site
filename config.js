@@ -29,6 +29,11 @@ module.exports = {
       name: 'Twitter',
       url: 'https://twitter.com/TennityShawn',
     },
+    {
+      icon: 'far fa-file-alt',
+      name: 'Resume',
+      url: '/resume',
+    }
   ],
   email: 'shawntennity@gmail.com',
   phone: '585-455-9166',

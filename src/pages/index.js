@@ -11,9 +11,6 @@ import SocialLinks from '../components/SocialLinks';
 import Header from '../components/Header';
 
 import myImage from '../assets/images/2018_10_Shawn-Tennity.jpg';
-import demoImage1 from '../assets/images/demo-image-01.jpg';
-import demoImage2 from '../assets/images/demo-image-02.jpg';
-import bgMaster from '../assets/images/bg-masthead.jpg';
 import watchList from '../assets/images/WatchList.png'
 import bucketList from '../assets/images/restaurant-bucketlist.png'
 import toolTime from '../assets/images/neighborhood-tool-time.png'
@@ -119,7 +116,6 @@ const IndexPage = () => {
                 if (document.getElementById('project1')) {
                   offset = document.getElementById('project1').offsetWidth
                 }
-                let translateXOffset = ((screenWidth - offset) / 2) + offset
                 let translateXOffsetNeg = -(((screenWidth - offset) / 2) + offset)
 
                 return (
@@ -177,8 +173,6 @@ const IndexPage = () => {
                   offset = document.getElementById('project1').offsetWidth
                 }
                 let translateXOffset = ((screenWidth - offset) / 2) + offset
-                let translateXOffsetNeg = -(((screenWidth - offset) / 2) + offset)
-
                 return (
                   <>
                     <Spring
@@ -239,7 +233,6 @@ const IndexPage = () => {
                 if (document.getElementById('project1')) {
                   offset = document.getElementById('project1').offsetWidth
                 }
-                let translateXOffset = ((screenWidth - offset) / 2) + offset
                 let translateXOffsetNeg = -(((screenWidth - offset) / 2) + offset)
 
                 return (
@@ -306,7 +299,7 @@ const IndexPage = () => {
                   <div className="row">
                     <div className="col-lg-8 mx-auto">
                       <h2 className="text-white mb-2">About</h2>
-                      <img src={myImage} className="img-fluid rounded-circle w-25 " alt="shawn-photo" />
+                      <img src={myImage} className="img-fluid rounded-circle w-25 " alt="shawn-tennity" />
                       <p className="text-white">
                         For as long as I can remember I have enjoyed solving problems.  This passion led me to software engineering and web development.  The path to this career was not straight, but the journey has been filled with jobs that have each added tools to my skillset.  If you are looking for someone with a combination of soft and technical skills, or you just want to chat, check out my portfolio and reach out.
                       </p>
