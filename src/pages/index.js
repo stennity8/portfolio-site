@@ -81,16 +81,16 @@ const IndexPage = () => {
                             Grayscale is open source and MIT licensed. This means you can
                             use it for any project - even commercial projects! Download it,
                             customize it, and publish your website!
-                        </p>
+                      </p>
                           <div className="social d-flex justify-content-center mt-3">
                             <a key={"url1"} href={"url"} className="btn btn-primary mx-2 p-2">
                               <i className="fab fa-github"></i>
                               GitHub
-                            </a>
+                          </a>
                             <a key={"url2"} href={"url"} className="btn btn-primary mx-2 p-2">
                               <i className="fa fa-cog"></i>
                               Demo
-                            </a>
+                          </a>
                           </div>
                         </div>
                       </div>
@@ -134,17 +134,17 @@ const IndexPage = () => {
                                   <p className="mb-0 text-white">
                                     An example of where you can put an image of a project, or
                                     anything else, along with a description.
-                          </p>
+                                  </p>
                                   <hr className="d-none d-lg-block mb-0 ml-0" />
                                   <div className="d-flex justify-content-center mt-3">
                                     <a key={"url5"} href={"url"} className="btn btn-primary mx-2 p-2">
                                       <i className="fab fa-github"></i>
                                       GitHub
-                            </a>
+                                    </a>
                                     <a key={"url6"} href={"url"} className="btn btn-primary mx-2 p-2">
                                       <i className="fa fa-cog"></i>
                                       Demo
-                            </a>
+                                    </a>
                                   </div>
                                 </div>
                               </div>
@@ -153,7 +153,26 @@ const IndexPage = () => {
                         </div>
                       }
                     </Spring>
+                  </>
+                )
+              }}
+            </VisibilitySensor>
+          </div>
 
+
+          <div>
+            <VisibilitySensor partialVisibility>
+              {({ isVisible }) => {
+                let screenWidth = window.innerWidth - 20
+                let offset = 100
+                if (document.getElementById('project1')) {
+                  offset = document.getElementById('project1').offsetWidth
+                }
+                let translateXOffset = ((screenWidth - offset) / 2) + offset
+                let translateXOffsetNeg = -(((screenWidth - offset) / 2) + offset)
+
+                return (
+                  <>
                     <Spring
                       delay={300}
                       to={{
@@ -230,16 +249,16 @@ const IndexPage = () => {
                                 Grayscale is open source and MIT licensed. This means you can
                                 use it for any project - even commercial projects! Download it,
                                 customize it, and publish your website!
-                           </p>
+                              </p>
                               <div className="social d-flex justify-content-center mt-3">
                                 <a key={"url9"} href={"url"} className="btn btn-primary mx-2 p-2">
                                   <i className="fab fa-github"></i>
                                   GitHub
-                             </a>
+                                </a>
                                 <a key={"url10"} href={"url"} className="btn btn-primary mx-2 p-2">
                                   <i className="fa fa-cog"></i>
                                   Demo
-                             </a>
+                                </a>
                               </div>
                             </div>
                           </div>
