@@ -28,24 +28,22 @@ const IndexPage = () => {
     <Layout>
       <Header />
 
-      {/* <header className="masthead">
-        <VisibilitySensor partialVisibility>
-          <div className="container d-flex h-100 align-items-center">
-            <animated.div style={animation} className="mx-auto text-center">
-              <h1 className="mx-auto my-0 text-uppercase">{config.heading}</h1>
-              <h2 className="text-white-75 mx-auto mt-2 mb-5">
-                {config.subHeading}
-              </h2>
-              <Scroll type="id" element="projects">
-                <a href="#projects" className="btn btn-primary">
-                  Projects
-            </a>
-              </Scroll>
-            </animated.div>
-          </div>
-        </VisibilitySensor>
-      </header> */}
       <header className="masthead">
+        <div className="container d-flex h-100 align-items-center">
+          <div className="mx-auto text-center">
+            <animated.h1 style={animation} className="mx-auto my-0 text-uppercase">{config.heading}</animated.h1>
+            <h2 className="text-white-75 mx-auto mt-2 mb-5">
+              {config.subHeading}
+            </h2>
+            <Scroll type="id" element="projects">
+              <a href="#projects" className="btn btn-primary">
+                Projects
+            </a>
+            </Scroll>
+          </div>
+        </div>
+      </header>
+      {/* <header className="masthead">
         <div className="container d-flex h-100 align-items-center">
 
           <VisibilitySensor partialVisibility>
@@ -53,7 +51,8 @@ const IndexPage = () => {
               <Spring
                 delay={500}
                 to={{
-                  opacity: isVisible ? 1 : 0
+                  // opacity: isVisible ? 1 : 0,
+                  marginTop: isVisible ? -10 : 0
                 }}
               >
                 {props =>
@@ -73,77 +72,59 @@ const IndexPage = () => {
             )}
           </VisibilitySensor>
         </div>
-      </header>
+      </header> */}
 
       <section id="projects" className="projects-section bg-light">
         <div className="container">
-
           <h1 className="text-center">Projects</h1>
-          {/* <VisibilitySensor partialVisibility onChange={(isVisible) => setHeaderVisibility(isVisible)}> */}
-          <VisibilitySensor partialVisibility>
-            {({ isVisible }) => (
-              <Spring
-                delay={300}
-                to={{
-                  opacity: isVisible ? 1 : 0,
-                  transform: isVisible ? "translateX(0)" : "translateX(400px)"
-                }}
-              >
-                {props =>
-                  <div className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props }}>
-                    <div className="col-xl-8 col-lg-7">
-                      <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
-                    </div>
-                    <div className="col-xl-4 col-lg-5">
-                      <div className="featured-text text-center text-lg-left">
-                        <h4>Shoreline</h4>
-                        <p className="text-black mb-0">
-                          Grayscale is open source and MIT licensed. This means you can
-                          use it for any project - even commercial projects! Download it,
-                          customize it, and publish your website!
-                  </p>
-                        <div className="social d-flex justify-content-center mt-3">
-                          <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
-                            <i className="fab fa-github"></i>
-                            GitHub
-                    </a>
-                          <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
-                            <i className="fa fa-cog"></i>
-                            Demo
-                    </a>
+
+          <div>
+            <VisibilitySensor partialVisibility>
+              {({ isVisible }) => {
+                let screenWidth = window.innerWidth
+                let offset = 100
+                if (document.getElementById('project1')) {
+                  offset = document.getElementById('project1').offsetWidth
+                }
+                let translateXOffset = ((screenWidth - offset) / 2) + offset
+                return (<Spring
+                  delay={300}
+                  to={{
+                    // opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? "translateX(0)" : `translateX(${translateXOffset}px)`
+                  }}
+                >
+                  {props =>
+                    <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props }}>
+                      <div className="col-xl-8 col-lg-7" >
+                        <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
+                      </div>
+                      <div className="col-xl-4 col-lg-5">
+                        <div className="featured-text text-center text-lg-left">
+                          <h4>Shoreline</h4>
+                          <p className="text-black mb-0">
+                            Grayscale is open source and MIT licensed. This means you can
+                            use it for any project - even commercial projects! Download it,
+                            customize it, and publish your website!
+                        </p>
+                          <div className="social d-flex justify-content-center mt-3">
+                            <a key={"url1"} href={"url"} className="btn btn-primary mx-2 p-2">
+                              <i className="fab fa-github"></i>
+                              GitHub
+                            </a>
+                            <a key={"url2"} href={"url"} className="btn btn-primary mx-2 p-2">
+                              <i className="fa fa-cog"></i>
+                              Demo
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                }
-              </Spring>
-            )}
-          </VisibilitySensor>
-
-          <div className="row align-items-center no-gutters mb-4 mb-lg-5">
-            <div className="col-xl-8 col-lg-7">
-              <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
-            </div>
-            <div className="col-xl-4 col-lg-5">
-              <div className="featured-text text-center text-lg-left">
-                <h4>Shoreline</h4>
-                <p className="text-black mb-0">
-                  Grayscale is open source and MIT licensed. This means you can
-                  use it for any project - even commercial projects! Download it,
-                  customize it, and publish your website!
-              </p>
-                <div className="social d-flex justify-content-center mt-3">
-                  <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
-                    <i className="fab fa-github"></i>
-                    GitHub
-                </a>
-                  <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
-                    <i className="fa fa-cog"></i>
-                    Demo
-                </a>
-                </div>
-              </div>
-            </div>
+                  }
+                </Spring>
+                )
+              }}
+            </VisibilitySensor>
           </div>
 
 
@@ -162,11 +143,11 @@ const IndexPage = () => {
                   </p>
                     <hr className="d-none d-lg-block mb-0 ml-0" />
                     <div className="d-flex justify-content-center mt-3">
-                      <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
+                      <a key={"url5"} href={"url"} className="btn btn-primary mx-2 p-2">
                         <i className="fab fa-github"></i>
                         GitHub
                     </a>
-                      <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
+                      <a key={"url6"} href={"url"} className="btn btn-primary mx-2 p-2">
                         <i className="fa fa-cog"></i>
                         Demo
                     </a>
@@ -193,11 +174,11 @@ const IndexPage = () => {
                   </p>
                     <hr className="d-none d-lg-block mb-0 mr-0" />
                     <div className="d-flex justify-content-center mt-3">
-                      <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
+                      <a key={"url7"} href={"url"} className="btn btn-primary mx-2 p-2">
                         <i className="fab fa-github"></i>
                         GitHub
                     </a>
-                      <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
+                      <a key={"url8"} href={"url"} className="btn btn-primary mx-2 p-2">
                         <i className="fa fa-cog"></i>
                         Demo
                     </a>
@@ -221,11 +202,11 @@ const IndexPage = () => {
                   customize it, and publish your website!
               </p>
                 <div className="social d-flex justify-content-center mt-3">
-                  <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
+                  <a key={"url9"} href={"url"} className="btn btn-primary mx-2 p-2">
                     <i className="fab fa-github"></i>
                     GitHub
                 </a>
-                  <a key={"url"} href={"url"} className="btn btn-primary mx-2 p-2">
+                  <a key={"url10"} href={"url"} className="btn btn-primary mx-2 p-2">
                     <i className="fa fa-cog"></i>
                     Demo
                 </a>
