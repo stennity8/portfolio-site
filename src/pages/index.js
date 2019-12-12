@@ -14,6 +14,10 @@ import myImage from '../assets/images/2018_10_Shawn-Tennity.jpg';
 import demoImage1 from '../assets/images/demo-image-01.jpg';
 import demoImage2 from '../assets/images/demo-image-02.jpg';
 import bgMaster from '../assets/images/bg-masthead.jpg';
+import watchList from '../assets/images/WatchList.png'
+import bucketList from '../assets/images/restaurant-bucketlist.png'
+import toolTime from '../assets/images/neighborhood-tool-time.png'
+import issueTracker from '../assets/images/issue-tracker.png'
 
 const IndexPage = () => {
   return (
@@ -39,7 +43,7 @@ const IndexPage = () => {
                     <Scroll type="id" element="projects">
                       <a href="#projects" className="btn btn-primary">
                         Projects
-                </a>
+                      </a>
                     </Scroll>
                   </div>
                 }
@@ -72,22 +76,27 @@ const IndexPage = () => {
                   {props =>
                     <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props }}>
                       <div className="col-xl-8 col-lg-7" >
-                        <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
+                        <img className="img-fluid mb-3 mb-lg-0" src={watchList} alt="" />
                       </div>
                       <div className="col-xl-4 col-lg-5">
                         <div className="featured-text text-center text-lg-left">
-                          <h4>Shoreline</h4>
+                          <h4>WatchList</h4>
                           <p className="text-black mb-0">
-                            Grayscale is open source and MIT licensed. This means you can
-                            use it for any project - even commercial projects! Download it,
-                            customize it, and publish your website!
+                            Utilizes The Movie Database API to pull and parse data of TV shows based on a user search or what is popular.  Created with React, Redux, and Semantic-UI on the front-end. A Rails API with a PostgresSQL handles the back-end.
+                            <br></br>
+                            <br></br>
+                            Demo:
+                            <br></br>
+                            username: chuck
+                            <br></br>
+                            password: password
                       </p>
                           <div className="social d-flex justify-content-center mt-3">
-                            <a key={"url1"} href={"url"} className="btn btn-primary mx-2 p-2">
+                            <a key="watchlist-github" href="https://github.com/stennity8/watchlist-client" className="btn btn-primary mx-2 p-2">
                               <i className="fab fa-github"></i>
                               GitHub
                           </a>
-                            <a key={"url2"} href={"url"} className="btn btn-primary mx-2 p-2">
+                            <a key="watchlist-netlify" href="https://watch-list.netlify.com/" className="btn btn-primary mx-2 p-2">
                               <i className="fa fa-cog"></i>
                               Demo
                           </a>
@@ -124,24 +133,23 @@ const IndexPage = () => {
                       {props =>
                         <div className="row justify-content-center no-gutters mb-4 mb-lg-0" style={{ ...props }}>
                           <div className="col-lg-6 fill">
-                            <img className="img-fluid" src={demoImage1} alt="" />
+                            <img className="img-fluid" src={issueTracker} alt="" />
                           </div>
                           <div className="col-lg-6">
                             <div className="bg-black text-center h-100 project">
                               <div className="d-flex h-100">
                                 <div className="project-text w-100 my-auto text-center text-lg-left">
-                                  <h4 className="text-white">Misty</h4>
+                                  <h4 className="text-white">Issue Tracker</h4>
                                   <p className="mb-0 text-white">
-                                    An example of where you can put an image of a project, or
-                                    anything else, along with a description.
+                                    An issue tracker to keep track of bugs/issues in your current projects.  Front-end created using Vanilla JS and Bootstrap. A Rails API with a PostgresSQL handles the back-end.
                                   </p>
                                   <hr className="d-none d-lg-block mb-0 ml-0" />
                                   <div className="d-flex justify-content-center mt-3">
-                                    <a key={"url5"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                    <a key="issue-tracker-github" href="https://github.com/stennity8/issue-tracker-frontend" className="btn btn-primary mx-2 p-2">
                                       <i className="fab fa-github"></i>
                                       GitHub
                                     </a>
-                                    <a key={"url6"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                    <a key="issue-tracker-demo" href="https://issue-tracker-st.netlify.com/" className="btn btn-primary mx-2 p-2">
                                       <i className="fa fa-cog"></i>
                                       Demo
                                     </a>
@@ -182,25 +190,30 @@ const IndexPage = () => {
                       {props =>
                         <div className="row justify-content-center no-gutters" style={{ ...props }}>
                           <div className="col-lg-6 fill">
-                            <img className="img-fluid" src={demoImage2} alt="" />
+                            <img className="img-fluid" src={toolTime} alt="" />
                           </div>
                           <div className="col-lg-6 order-lg-first">
                             <div className="bg-black text-center h-100 project">
                               <div className="d-flex h-100">
                                 <div className="project-text w-100 my-auto text-center text-lg-right">
-                                  <h4 className="text-white">Mountains</h4>
-                                  <p className="mb-0 text-white-50">
-                                    Another example of a project with its respective
-                                    description. These sections work well responsively as well,
-                                    try this theme on a small screen!
+                                  <h4 className="text-white">Neighborhood Tool Time</h4>
+                                  <p className="mb-0 text-white">
+                                    A marketplace for neighbors to borrow and lend tools or equipment to each other.  This app uses Ruby on Rails 6.0 along with SASS and Bootstrap for styling.
+                                    <br></br>
+                                    <br></br>
+                                    Demo:
+                                    <br></br>
+                                    e-mail: chuck@chuck.com
+                                    <br></br>
+                                    password: password
                                   </p>
                                   <hr className="d-none d-lg-block mb-0 mr-0" />
                                   <div className="d-flex justify-content-center mt-3">
-                                    <a key={"url7"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                    <a key="neighborhood-tool-time-github" href="https://github.com/stennity8/neighborhood-tool-time" className="btn btn-primary mx-2 p-2">
                                       <i className="fab fa-github"></i>
                                       GitHub
                                     </a>
-                                    <a key={"url8"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                    <a key="neighborhood-tool-time-demo" href="https://neighborhood-tool-time.herokuapp.com/" className="btn btn-primary mx-2 p-2">
                                       <i className="fa fa-cog"></i>
                                       Demo
                                     </a>
@@ -240,22 +253,27 @@ const IndexPage = () => {
                       {props =>
                         <div className="row align-items-center no-gutters mt-4 mt-lg-5" style={{ ...props }}>
                           <div className="col-xl-8 col-lg-7">
-                            <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
+                            <img className="img-fluid mb-3 mb-lg-0" src={bucketList} alt="" />
                           </div>
                           <div className="col-xl-4 col-lg-5">
                             <div className="featured-text text-center text-lg-left">
-                              <h4>Shoreline</h4>
+                              <h4>Restaurant Bucket List</h4>
                               <p className="text-black mb-0">
-                                Grayscale is open source and MIT licensed. This means you can
-                                use it for any project - even commercial projects! Download it,
-                                customize it, and publish your website!
+                                An app for reviewing restaurants and creating a bucket list of restaurants you’d like to dine at.  This app was created with Ruby, Sinatra, and Bootstrap.
+                                <br></br>
+                                <br></br>
+                                Demo:
+                                <br></br>
+                                username: ChuckGato
+                                <br></br>
+                                password: password
                               </p>
                               <div className="social d-flex justify-content-center mt-3">
-                                <a key={"url9"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                <a key="restaurant-bucket-list-github" href="https://github.com/stennity8/sinatra-restaurant-buckeklist-app" className="btn btn-primary mx-2 p-2">
                                   <i className="fab fa-github"></i>
                                   GitHub
                                 </a>
-                                <a key={"url10"} href={"url"} className="btn btn-primary mx-2 p-2">
+                                <a key="restaurant-bucket-list-demo" href="http://restaurant-bucket-list.herokuapp.com/" className="btn btn-primary mx-2 p-2">
                                   <i className="fa fa-cog"></i>
                                   Demo
                                 </a>
