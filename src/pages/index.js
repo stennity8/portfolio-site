@@ -1,8 +1,6 @@
 import React from 'react';
-import { useSpring, animated } from 'react-spring'
 import { Spring } from 'react-spring/renderprops'
 import VisibilitySensor from 'react-visibility-sensor'
-// import Showcase from '../components/Showcase'
 
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
@@ -18,29 +16,37 @@ import demoImage2 from '../assets/images/demo-image-02.jpg';
 import bgMaster from '../assets/images/bg-masthead.jpg';
 
 const IndexPage = () => {
-  const animation = useSpring({
-    config: { duration: 700 },
-    from: { opacity: 0 },
-    to: { opacity: 1 }
-  })
-
   return (
     <Layout>
       <Header />
 
       <header className="masthead" id="page-top">
         <div className="container d-flex h-100 align-items-center">
-          <div className="mx-auto text-center">
-            <animated.h1 style={animation} className="mx-auto my-0 text-uppercase">{config.heading}</animated.h1>
-            <h2 className="text-white-75 mx-auto mt-2 mb-5">
-              {config.subHeading}
-            </h2>
-            <Scroll type="id" element="projects">
-              <a href="#projects" className="btn btn-primary">
-                Projects
-            </a>
-            </Scroll>
-          </div>
+          <VisibilitySensor partialVisibility>
+            {({ isVisible }) => {
+              return (<Spring
+                delay={300}
+                to={{
+                  opacity: isVisible ? 1 : 0
+                }}
+              >
+                {props =>
+                  <div className="mx-auto text-center" style={{ ...props }}>
+                    <h1 className="mx-auto my-0 text-uppercase">{config.heading}</h1>
+                    <h2 className="text-white-75 mx-auto mt-2 mb-5">
+                      {config.subHeading}
+                    </h2>
+                    <Scroll type="id" element="projects">
+                      <a href="#projects" className="btn btn-primary">
+                        Projects
+                </a>
+                    </Scroll>
+                  </div>
+                }
+              </Spring>
+              )
+            }}
+          </VisibilitySensor>
         </div>
       </header>
 
@@ -64,7 +70,7 @@ const IndexPage = () => {
                   }}
                 >
                   {props =>
-                    <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props, overflow: "hidden" }}>
+                    <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props }}>
                       <div className="col-xl-8 col-lg-7" >
                         <img className="img-fluid mb-3 mb-lg-0" src={bgMaster} alt="" />
                       </div>
@@ -116,7 +122,7 @@ const IndexPage = () => {
                       }}
                     >
                       {props =>
-                        <div className="row justify-content-center no-gutters mb-4 mb-lg-0" style={{ ...props, overflow: "hidden" }}>
+                        <div className="row justify-content-center no-gutters mb-4 mb-lg-0" style={{ ...props }}>
                           <div className="col-lg-6 fill">
                             <img className="img-fluid" src={demoImage1} alt="" />
                           </div>
@@ -155,7 +161,7 @@ const IndexPage = () => {
                       }}
                     >
                       {props =>
-                        <div className="row justify-content-center no-gutters" style={{ ...props, overflow: "hidden" }}>
+                        <div className="row justify-content-center no-gutters" style={{ ...props }}>
                           <div className="col-lg-6 fill">
                             <img className="img-fluid" src={demoImage2} alt="" />
                           </div>
@@ -249,9 +255,6 @@ const IndexPage = () => {
         </div>
       </section>
 
-
-
-
       <section id="about" className="about-section text-center">
         <VisibilitySensor partialVisibility>
           {({ isVisible }) => {
@@ -262,7 +265,7 @@ const IndexPage = () => {
               }}
             >
               {props =>
-                <div className="container" style={{ ...props, overflow: "hidden" }}>
+                <div className="container" style={{ ...props }}>
                   <div className="row">
                     <div className="col-lg-8 mx-auto">
                       <h2 className="text-white mb-2">About</h2>
