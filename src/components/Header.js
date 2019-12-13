@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Scroll from './Scroll';
 import config from '../../config';
+import pdf from '../assets/docs/Resume-12_2019.pdf'
+
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -96,6 +98,12 @@ export default class Header extends Component {
                     Contact
                   </a>
                 </Scroll>
+              </li>
+
+              <li className="nav-item">
+                <a href={pdf} className="nav-link">
+                  Resume
+                </a>
               </li>
             </ul>
           </div>

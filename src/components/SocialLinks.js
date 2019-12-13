@@ -1,5 +1,6 @@
 import React from 'react';
 import config from '../../config';
+import pdf from '../assets/docs/Resume-12_2019.pdf'
 
 export default function SocialLinks() {
   return (
@@ -27,6 +28,17 @@ export default function SocialLinks() {
                 <h4 className="text-uppercase m-0">Phone</h4>
                 <hr className="my-4" />
                 <div className="small text-black-50">{config.phone}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-4 mb-3 mb-md-0">
+            <div className="card py-4 h-100">
+              <div className="card-body text-center">
+                <i className="far fa-file-alt text-primary mb-2"></i>
+                <h4 className="text-uppercase m-0">Resume</h4>
+                <hr className="my-4" />
+                <a href={pdf}>Download PDF</a>
               </div>
             </div>
           </div>
