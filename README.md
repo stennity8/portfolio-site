@@ -1,6 +1,6 @@
 # Portfolio Site Dec 2019
 
-Portfolio site using Gatsby and starter: 'gatsby-starter-grayscale' from https://anubhavsrivastava.github.io
+Portfolio site using Gatsby and react-spring
 
 ### License
 
