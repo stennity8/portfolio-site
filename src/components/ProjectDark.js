@@ -4,8 +4,6 @@ import { Spring } from 'react-spring/renderprops'
 
 
 const ProjectLight = ({ translateDirection, imgSrc, name, description, username, password, githubLink, demoLink, screenWidth }) => {
-  console.log(screenWidth)
-
   const demo = (username, password) => {
     if (username) {
       return (
