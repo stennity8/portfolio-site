@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spring } from 'react-spring/renderprops'
+import { Spring, config as springConfig } from 'react-spring/renderprops'
 import VisibilitySensor from 'react-visibility-sensor'
 
 import Layout from '../components/Layout';
@@ -15,6 +15,7 @@ import watchList from '../assets/images/WatchList.png'
 import bucketList from '../assets/images/restaurant-bucketlist.png'
 import toolTime from '../assets/images/neighborhood-tool-time.png'
 import issueTracker from '../assets/images/issue-tracker.png'
+import ProjectLight from '../components/ProjectLight';
 
 const IndexPage = () => {
   return (
@@ -55,6 +56,17 @@ const IndexPage = () => {
         <div className="container">
           <h1 className="text-center">Projects</h1>
 
+          <ProjectLight
+            translateDirection={'right'}
+            imgSrc={watchList}
+            name={'WatchList'}
+            description={'Utilizes The Movie Database API to pull and parse data of TV shows based on a user search or what is popular.  Created with React, Redux, and Semantic-UI on the front-end. A Rails API with a PostgresSQL handles the back-end.'}
+            username={'chuck'}
+            password={'password'}
+            githubLink={'https://github.com/stennity8/watchlist-client'}
+            demoLink={'https://watch-list.netlify.com/'}
+          />
+
           <div>
             <VisibilitySensor partialVisibility>
               {({ isVisible }) => {
@@ -64,45 +76,47 @@ const IndexPage = () => {
                   offset = document.getElementById('project1').offsetWidth
                 }
                 let translateXOffset = ((screenWidth - offset) / 2) + offset
-                return (<Spring
-                  delay={300}
-                  to={{
-                    transform: isVisible ? "translateX(0)" : `translateX(${translateXOffset}px)`
-                  }}
-                >
-                  {props =>
-                    <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5" style={{ ...props }}>
-                      <div className="col-xl-8 col-lg-7" >
-                        <img className="img-fluid mb-3 mb-lg-0" src={watchList} alt="" />
-                      </div>
-                      <div className="col-xl-4 col-lg-5">
-                        <div className="featured-text text-center text-lg-left">
-                          <h4>WatchList</h4>
-                          <p className="text-black mb-0">
-                            Utilizes The Movie Database API to pull and parse data of TV shows based on a user search or what is popular.  Created with React, Redux, and Semantic-UI on the front-end. A Rails API with a PostgresSQL handles the back-end.
+                return (
+                  <Spring
+                    config={{ tension: 280, friction: 70 }}
+                    to={{
+                      opacity: isVisible ? 1 : 0,
+                      transform: isVisible ? "translateX(0)" : `translateX(${translateXOffset}px)`
+                    }}
+                  >
+                    {props =>
+                      <div id="project1" className="row align-items-center no-gutters mb-4 mb-lg-5 border border-secondary" style={{ ...props }}>
+                        <div className="col-xl-8 col-lg-7" >
+                          <img className="img-fluid mb-3 mb-lg-0" src={watchList} alt="" />
+                        </div>
+                        <div className="col-xl-4 col-lg-5">
+                          <div className="featured-text text-center text-lg-left">
+                            <h4>WatchList</h4>
+                            <p className="text-black mb-0">
+                              Utilizes The Movie Database API to pull and parse data of TV shows based on a user search or what is popular.  Created with React, Redux, and Semantic-UI on the front-end. A Rails API with a PostgresSQL handles the back-end.
                             <br></br>
+                              <br></br>
+                              Demo:
                             <br></br>
-                            Demo:
+                              username: chuck
                             <br></br>
-                            username: chuck
-                            <br></br>
-                            password: password
+                              password: password
                       </p>
-                          <div className="social d-flex justify-content-center mt-3">
-                            <a key="watchlist-github" href="https://github.com/stennity8/watchlist-client" className="btn btn-primary mx-2 p-2">
-                              <i className="fab fa-github"></i>
-                              GitHub
+                            <div className="social d-flex justify-content-center mt-3">
+                              <a key="watchlist-github" href="https://github.com/stennity8/watchlist-client" className="btn btn-primary mx-2 p-2">
+                                <i className="fab fa-github"></i>
+                                GitHub
                           </a>
-                            <a key="watchlist-netlify" href="https://watch-list.netlify.com/" className="btn btn-primary mx-2 p-2">
-                              <i className="fa fa-cog"></i>
-                              Demo
+                              <a key="watchlist-netlify" href="https://watch-list.netlify.com/" className="btn btn-primary mx-2 p-2">
+                                <i className="fa fa-cog"></i>
+                                Demo
                           </a>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  }
-                </Spring>
+                    }
+                  </Spring>
                 )
               }}
             </VisibilitySensor>
@@ -121,8 +135,9 @@ const IndexPage = () => {
                 return (
                   <>
                     <Spring
-                      delay={300}
+                      config={{ tension: 280, friction: 70 }}
                       to={{
+                        opacity: isVisible ? 1 : 0,
                         transform: isVisible ? "translateX(0)" : `translateX(${translateXOffsetNeg}px)`
                       }}
                     >
@@ -176,8 +191,9 @@ const IndexPage = () => {
                 return (
                   <>
                     <Spring
-                      delay={300}
+                      config={{ tension: 280, friction: 70 }}
                       to={{
+                        opacity: isVisible ? 1 : 0,
                         transform: isVisible ? "translateX(0)" : `translateX(${translateXOffset}px)`
                       }}
                     >
@@ -238,8 +254,9 @@ const IndexPage = () => {
                 return (
                   <>
                     <Spring
-                      delay={300}
+                      config={{ tension: 280, friction: 70 }}
                       to={{
+                        opacity: isVisible ? 1 : 0,
                         transform: isVisible ? "translateX(0)" : `translateX(${translateXOffsetNeg}px)`
                       }}
                     >
