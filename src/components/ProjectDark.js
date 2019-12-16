@@ -48,26 +48,31 @@ const ProjectLight = ({ translateDirection, imgSrc, name, description, username,
                 }}
               >
                 {props =>
-                  <div className="project row align-items-center no-gutters mb-4 mt-4 mb-lg-5 border border-secondary" style={{ ...props }}>
-                    <div className="col-xl-8 col-lg-7" >
-                      <img className="img-fluid mb-3 mb-lg-0" src={imgSrc} alt="" />
+                  <div className="row justify-content-center no-gutters mb-4 mb-lg-0" style={{ ...props }}>
+                    <div className="col-lg-6 fill">
+                      <img className="img-fluid" src={imgSrc} alt="" />
                     </div>
-                    <div className="col-xl-4 col-lg-5">
-                      <div className="featured-text text-center text-lg-left m-3">
-                        <h4>{name}</h4>
-                        <p className="text-black mb-0">
-                          {description}
-                          {demo(username, password)}
-                        </p>
-                        <div className="social d-flex justify-content-center mt-3">
-                          <a key="watchlist-github" href={githubLink} className="btn btn-primary mx-2 p-2">
-                            <i className="fab fa-github"></i>
-                            GitHub
-                          </a>
-                          <a key="watchlist-netlify" href={demoLink} className="btn btn-primary mx-2 p-2">
-                            <i className="fa fa-cog"></i>
-                            Demo
-                          </a>
+                    <div className={translateDirection === 'right' ? 'col-lg-6 order-lg-first' : 'col-lg-6'}>
+                      <div className="bg-black text-center h-100 project">
+                        <div className="d-flex h-100">
+                          <div className="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 className="text-white">{name}</h4>
+                            <p className="mb-0 text-white">
+                              {description}
+                              {demo(username, password)}
+                            </p>
+                            <hr className="d-none d-lg-block mb-0 ml-0" />
+                            <div className="d-flex justify-content-center mt-3">
+                              <a key="issue-tracker-github" href={githubLink} className="btn btn-primary mx-2 p-2">
+                                <i className="fab fa-github"></i>
+                                GitHub
+                                    </a>
+                              <a key="issue-tracker-demo" href={demoLink} className="btn btn-primary mx-2 p-2">
+                                <i className="fa fa-cog"></i>
+                                Demo
+                                    </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
