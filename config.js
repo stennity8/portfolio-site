@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Portfolio', // <title>
+  siteTitle: 'Shawn Tennity', // <title>
   siteHome: 'Home', // <title>
   manifestName: 'Grayscale',
   manifestShortName: 'Landing', // max 12 characters
