@@ -1,7 +1,7 @@
 module.exports = {
   siteTitle: 'Shawn Tennity', // <title>
   siteHome: 'Home', // <title>
-  manifestName: 'Grayscale',
+  manifestName: 'Shawn Tennity Portfolio',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',
   manifestBackgroundColor: '#663399',
