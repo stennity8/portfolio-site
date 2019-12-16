@@ -13,7 +13,7 @@ export default function SocialLinks() {
               <div className="card-body text-center">
                 <i className="fas fa-envelope text-primary mb-2"></i>
                 <h4 className="text-uppercase m-0">Email</h4>
-                <hr className="my-4" />
+                <hr className="my-4 mx-auto" />
                 <div className="small text-black-50">
                   <a href={`mailto:${config.email}`}>{config.email}</a>
                 </div>
@@ -26,7 +26,7 @@ export default function SocialLinks() {
               <div className="card-body text-center">
                 <i className="fas fa-mobile-alt text-primary mb-2"></i>
                 <h4 className="text-uppercase m-0">Phone</h4>
-                <hr className="my-4" />
+                <hr className="my-4 mx-auto" />
                 <div className="small text-black-50">{config.phone}</div>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default function SocialLinks() {
               <div className="card-body text-center">
                 <i className="far fa-file-alt text-primary mb-2"></i>
                 <h4 className="text-uppercase m-0">Resume</h4>
-                <hr className="my-4" />
+                <hr className="my-4 mx-auto" />
                 <a href={pdf}>Download PDF</a>
               </div>
             </div>
