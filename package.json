@@ -1,14 +1,13 @@
 {
-  "name": "gatsby-starter-grayscale",
+  "name": "portfolio",
   "version": "0.0.1",
-  "description": "Gatsby.js V2 starter template based on Grayscale by startbootstrap",
+  "description": "Portfolio site created in December 2019.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-grayscale.git"
+    "url": "git+https://github.com/stennity8/portfolio-site"
   },
   "author": {
-    "name": "Anubhav Srivastava",
-    "email": "anubhav.srivastava00@gmail.com"
+    "name": "Shawn Tennity"
   },
   "dependencies": {
     "gatsby": "^2.4.3",
@@ -36,7 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.3"
   },
@@ -45,9 +44,5 @@
     "gatsby-starter",
     "gatsby-starter-grayscale"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/anubhavsrivastava/gatsby-starter-grayscale/issues"
-  },
-  "homepage": "https://github.com/anubhavsrivastava/gatsby-starter-grayscale#readme"
+  "license": "MIT"
 }
