@@ -3,7 +3,9 @@ import VisibilitySensor from 'react-visibility-sensor'
 import { Spring } from 'react-spring/renderprops'
 
 
-const ProjectLight = ({ translateDirection, imgSrc, name, description, username, password, githubLink, demoLink }) => {
+const ProjectLight = ({ translateDirection, imgSrc, name, description, username, password, githubLink, demoLink, screenWidth }) => {
+  console.log(screenWidth)
+
   const demo = (username, password) => {
     if (username) {
       return (
@@ -26,7 +28,7 @@ const ProjectLight = ({ translateDirection, imgSrc, name, description, username,
         <div>
           <VisibilitySensor partialVisibility>
             {({ isVisible }) => {
-              let screenWidth = window.innerWidth - 20
+              // let screenWidth = window.innerWidth - 20
               let offset = 100
 
               if (document.querySelector('.project')) {
