@@ -1,6 +1,6 @@
 module.exports = {
   siteTitle: 'Shawn Tennity', // <title>
-  siteHome: 'Home', // <title>
+  siteHome: 'ST', // <title>
   manifestName: 'Shawn Tennity Portfolio',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',

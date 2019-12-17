@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Scroll from './Scroll';
 import config from '../../config';
 import pdf from '../assets/docs/Resume-12_2019.pdf'
+import myImage from '../assets/images/2018_10_Shawn-Tennity.jpg';
+
 
 export default class Header extends Component {
   constructor(props) {
@@ -44,7 +46,8 @@ export default class Header extends Component {
         <div className="container">
           <Scroll>
             <a className="navbar-brand" href="#page-top">
-              {config.siteHome}
+              <i class="fas fa-home">{config.siteHome}</i>
+
             </a>
           </Scroll>
           <button
