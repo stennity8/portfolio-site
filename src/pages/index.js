@@ -79,7 +79,7 @@ class IndexPage extends Component {
               translateDirection={'right'}
               imgSrc={watchList}
               name={'WatchList'}
-              description={'Utilizes The Movie Database API to pull and parse data of TV shows based on a user search or what is popular.  Created with React, Redux, and Semantic-UI on the front-end. A Rails API with a PostgresSQL handles the back-end.'}
+              description={'Utilizes The Movie Database API to pull and parse data of TV shows based on a user search or what is popular.  Created with React, Redux, and Semantic-UI on the front-end. A Rails API and PostgresSQL database handles the back-end.'}
               username={'chuck'}
               password={'password'}
               githubLink={'https://github.com/stennity8/watchlist-client'}
