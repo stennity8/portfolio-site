@@ -74,6 +74,7 @@ class IndexPage extends Component {
         <section id="projects" className="projects-section bg-light">
           <div className="container">
             <h1 className="text-center">Projects</h1>
+            <p className="text-center">*Note: Demos may take a little time to load due to Heroku putting apps in sleep mode.</p>
 
             <ProjectLight
               translateDirection={'right'}
