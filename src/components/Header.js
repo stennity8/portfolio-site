@@ -108,12 +108,12 @@ export default class Header extends Component {
                   Resume
                 </a>
               </li>
-
+              {/* 
               <li className="nav-item">
                 <a href="https://stennity8.github.io/" className="nav-link">
                   Blog
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
