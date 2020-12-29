@@ -31,5 +31,5 @@ module.exports = {
     }
   ],
   email: 'shawntennity@gmail.com',
-  phone: '585-455-9166',
+  // phone: '585-455-9166',
 };
