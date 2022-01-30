@@ -32,7 +32,7 @@ export default function SocialLinks() {
             </div>
           </div> */}
 
-          <div className="col-md-4 mb-3 mb-md-0">
+          {/* <div className="col-md-4 mb-3 mb-md-0">
             <div className="card py-4 h-100">
               <div className="card-body text-center">
                 <i className="far fa-file-alt text-primary mb-2"></i>
@@ -41,7 +41,7 @@ export default function SocialLinks() {
                 <a href={pdf}>Download PDF</a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="social d-flex justify-content-center" id="social-button">

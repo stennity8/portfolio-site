@@ -57,11 +57,11 @@ class IndexPage extends Component {
                       <h2 className="text-white-75 mx-auto mt-2 mb-5">
                         {config.subHeading}
                       </h2>
-                      <Scroll type="id" element="projects">
+                      {/* <Scroll type="id" element="projects">
                         <a href="#projects" className="btn btn-primary">
                           Projects
                       </a>
-                      </Scroll>
+                      </Scroll> */}
                     </div>
                   }
                 </Spring>
@@ -71,7 +71,7 @@ class IndexPage extends Component {
           </div>
         </header>
 
-        <section id="projects" className="projects-section bg-light">
+        {/* <section id="projects" className="projects-section bg-light">
           <div className="container">
             <h1 className="text-center">Projects</h1>
             <p className="text-center">*Note: Demos may take a little time to load due to Heroku putting apps in sleep mode.</p>
@@ -125,7 +125,7 @@ class IndexPage extends Component {
             />
 
           </div>
-        </section>
+        </section> */}
 
         <section id="about" className="about-section text-center">
           <VisibilitySensor partialVisibility>

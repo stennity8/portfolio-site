@@ -68,7 +68,7 @@ export default class Header extends Component {
             id="navbarResponsive"
           >
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Scroll
                   onClick={_ => this.toggleMenu(!openMenu)}
                   type="id"
@@ -78,7 +78,7 @@ export default class Header extends Component {
                     Projects
                   </a>
                 </Scroll>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Scroll
                   onClick={_ => this.toggleMenu(!openMenu)}
@@ -103,11 +103,11 @@ export default class Header extends Component {
                 </Scroll>
               </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a href={pdf} className="nav-link">
                   Resume
                 </a>
-              </li>
+              </li> */}
               {/* 
               <li className="nav-item">
                 <a href="https://stennity8.github.io/" className="nav-link">

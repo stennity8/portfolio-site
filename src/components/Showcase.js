@@ -12,11 +12,11 @@ const Showcase = () => {
         <h2 className="text-white-75 mx-auto mt-2 mb-5">
           {config.subHeading}
         </h2>
-        <Scroll type="id" element="projects">
+        {/* <Scroll type="id" element="projects">
           <a href="#projects" className="btn btn-primary">
             Projects
             </a>
-        </Scroll>
+        </Scroll> */}
       </div>
     </div>
   );
