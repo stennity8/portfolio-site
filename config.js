@@ -14,21 +14,21 @@ module.exports = {
 
   // social
   socialLinks: [
-    {
-      icon: 'fa-github',
-      name: 'Github',
-      url: 'https://github.com/stennity8',
-    },
+    // {
+    //   icon: 'fa-github',
+    //   name: 'Github',
+    //   url: 'https://github.com/stennity8',
+    // },
     {
       icon: 'fa-linkedin-in',
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/shawn-tennity/',
     },
-    {
-      icon: 'fa-twitter',
-      name: 'Twitter',
-      url: 'https://twitter.com/TennityShawn',
-    }
+    // {
+    //   icon: 'fa-twitter',
+    //   name: 'Twitter',
+    //   url: 'https://twitter.com/TennityShawn',
+    // }
   ],
   email: 'shawntennity@gmail.com',
   // phone: '585-455-9166',
